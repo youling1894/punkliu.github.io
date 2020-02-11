@@ -229,6 +229,126 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://youling1894.github.io/youling1894.github.io/youling1894.github.io/2020/02/11/zebraStyleInfo1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Zhi Sheng Liu">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/youling1894.github.io/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Sisyphus">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/youling1894.github.io/2020/02/11/zebraStyleInfo1/" itemprop="url">zebraStyleInfo1</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-02-11T15:56:27+08:00">
+                2020-02-11
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><img src="/youling1894.github.io/youling1894.github/%E5%9B%BE1.png" alt="avatar"></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://youling1894.github.io/youling1894.github.io/youling1894.github.io/2020/02/11/zebraStyleInfo/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -303,7 +423,7 @@
             <p>利用这个超长假期把《CSS揭秘》肝完了。现在来整理一下读书笔记。用这个博客来记一些需要补充和加深印象的东西还有一些自己的感想</p>
 <p>以前做网页时有个需求是显示出一个简单列表，设计是斑马条纹的背景。<br>[设计图]<br>最无脑的方法是给奇数行添加一种颜色<br>后来看书get到了一种特别简单的方法-使用条纹背景(linear-gradient)<br>用table实现有点麻烦.. 可以改用一些标签实现。比如一种内容就用一类标签或类名。<br>这里我用&lt;b&gt;标签代表标题 &lt;span&gt;来写内容<br>初步实现是这样的</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;b&gt;name&lt;&#x2F;b&gt;</span><br><span class="line">&lt;span&gt;punk liu&lt;&#x2F;span&gt;</span><br><span class="line">&lt;b&gt;birthday&lt;&#x2F;b&gt;</span><br><span class="line">&lt;span&gt;1894&lt;&#x2F;span&gt;</span><br><span class="line">&lt;b&gt;habit&lt;&#x2F;b&gt;</span><br><span class="line">&lt;span&gt;shopping&lt;&#x2F;span&gt;&lt;span&gt;sleep&lt;&#x2F;span&gt;</span><br></pre></td></tr></table></figure>
-<p>[图1]<br>因为都是行内元素所以没有换行，但如果手动在需要换行的地方加&lt;br&gt;又有点太麻烦…(刚毕业时这么做过)<br>需求是span的最后一个内容要换行，可以使用Unicode来实现<br>为了不破坏dom结构，可以给span加个<a href="/youling1894.github.io/2020/02/10/pseudoElement">伪元素</a>，因为需要在内容后面添加，所以使用after</p>
+<p><img src="/youling1894.github.io/youling1894.github/%E5%9B%BE1.png" alt="avatar"><br>因为都是行内元素所以没有换行，但如果手动在需要换行的地方加&lt;br&gt;又有点太麻烦…(刚毕业时这么做过)<br>需求是span的最后一个内容要换行，可以使用Unicode来实现<br>为了不破坏dom结构，可以给span加个<a href="/youling1894.github.io/2020/02/10/pseudoElement">伪元素</a>，因为需要在内容后面添加，所以使用after</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">span::after&#123;</span><br><span class="line">        content: &#39;\A&#39;;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
 <p>[图2]<br>可是什么也没变… 原因是换行符与空白合并了 white-space默认值是noraml，它在遇到换行，空白和tab时都会合并，只有文字有超出才会转行，具体情况看这里。<br>这时候需要换行符起作用就要将white-space设置为pre</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">span::after&#123;</span><br><span class="line">    content: &#39;\A&#39;;</span><br><span class="line">    white-space: pre;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -649,7 +769,7 @@
               
                 <a href="/youling1894.github.io/archives/%20%7C%7C%20archive">
               
-                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-count">4</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
