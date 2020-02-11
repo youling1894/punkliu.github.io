@@ -79,15 +79,15 @@
 
 
 
-<meta name="description" content="缓存原因？">
+<meta name="description" content="利用这个超长假期把《CSS揭秘》肝完了。现在来整理一下读书笔记。用这个博客来记一些需要补充和加深印象的东西还有一些自己的感想 以前做网页时有个需求是显示出一个简单列表，设计是斑马条纹的背景。[设计图]最无脑的方法是给奇数行添加一种颜色后来看书get到了一种特别简单的方法-使用条纹背景(linear-gradient)用table实现有点麻烦.. 可以改用一些标签实现。比如一种内容就用一类标签或类名">
 <meta property="og:type" content="article">
-<meta property="og:title" content="cookie">
-<meta property="og:url" content="https://youling1894.github.io/youling1894.github.io/2019/12/26/cookie/index.html">
+<meta property="og:title" content="列表和斑马条纹">
+<meta property="og:url" content="https://youling1894.github.io/youling1894.github.io/2020/02/11/zebraStyleInfo/index.html">
 <meta property="og:site_name" content="Sisyphus">
-<meta property="og:description" content="缓存原因？">
+<meta property="og:description" content="利用这个超长假期把《CSS揭秘》肝完了。现在来整理一下读书笔记。用这个博客来记一些需要补充和加深印象的东西还有一些自己的感想 以前做网页时有个需求是显示出一个简单列表，设计是斑马条纹的背景。[设计图]最无脑的方法是给奇数行添加一种颜色后来看书get到了一种特别简单的方法-使用条纹背景(linear-gradient)用table实现有点麻烦.. 可以改用一些标签实现。比如一种内容就用一类标签或类名">
 <meta property="og:locale" content="CN">
-<meta property="article:published_time" content="2019-12-26T09:50:47.000Z">
-<meta property="article:modified_time" content="2019-12-26T09:50:55.807Z">
+<meta property="article:published_time" content="2020-02-11T05:49:57.000Z">
+<meta property="article:modified_time" content="2020-02-11T07:19:42.291Z">
 <meta property="article:author" content="Zhi Sheng Liu">
 <meta name="twitter:card" content="summary">
 
@@ -119,13 +119,13 @@
 
 
 
-  <link rel="canonical" href="https://youling1894.github.io/youling1894.github.io/2019/12/26/cookie/"/>
+  <link rel="canonical" href="https://youling1894.github.io/youling1894.github.io/2020/02/11/zebraStyleInfo/"/>
 
 
 
 
 
-  <title>cookie | Sisyphus</title>
+  <title>列表和斑马条纹 | Sisyphus</title>
   
 
 
@@ -232,7 +232,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://youling1894.github.io/youling1894.github.io/youling1894.github.io/2019/12/26/cookie/">
+    <link itemprop="mainEntityOfPage" href="https://youling1894.github.io/youling1894.github.io/youling1894.github.io/2020/02/11/zebraStyleInfo/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Zhi Sheng Liu">
@@ -249,7 +249,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">cookie</h1>
+          <h1 class="post-title" itemprop="name headline">列表和斑马条纹</h1>
         
 
         <div class="post-meta">
@@ -261,8 +261,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-12-26T17:50:47+08:00">
-                2019-12-26
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-02-11T13:49:57+08:00">
+                2020-02-11
               </time>
             
 
@@ -299,7 +299,26 @@
       
 
       
-        <p>缓存原因？</p>
+        <p>利用这个超长假期把《CSS揭秘》肝完了。现在来整理一下读书笔记。用这个博客来记一些需要补充和加深印象的东西还有一些自己的感想</p>
+<p>以前做网页时有个需求是显示出一个简单列表，设计是斑马条纹的背景。<br>[设计图]<br>最无脑的方法是给奇数行添加一种颜色<br>后来看书get到了一种特别简单的方法-使用条纹背景(linear-gradient)<br>用table实现有点麻烦.. 可以改用一些标签实现。比如一种内容就用一类标签或类名。<br>这里我用&lt;b&gt;标签代表标题 &lt;span&gt;来写内容<br>初步实现是这样的</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;b&gt;name&lt;&#x2F;b&gt;</span><br><span class="line">&lt;span&gt;punk liu&lt;&#x2F;span&gt;</span><br><span class="line">&lt;b&gt;birthday&lt;&#x2F;b&gt;</span><br><span class="line">&lt;span&gt;1894&lt;&#x2F;span&gt;</span><br><span class="line">&lt;b&gt;habit&lt;&#x2F;b&gt;</span><br><span class="line">&lt;span&gt;shopping&lt;&#x2F;span&gt;&lt;span&gt;sleep&lt;&#x2F;span&gt;</span><br></pre></td></tr></table></figure>
+<p>[图1]<br>因为都是行内元素所以没有换行，但如果手动在需要换行的地方加&lt;br&gt;又有点太麻烦…(刚毕业时这么做过)<br>需求是span的最后一个内容要换行，可以使用Unicode来实现<br>为了不破坏dom结构，可以给span加个<a href="/youling1894.github.io/2020/02/10/pseudoElement">伪元素</a>，因为需要在内容后面添加，所以使用after</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">span::after&#123;</span><br><span class="line">        content: &#39;\A&#39;;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<p>[图2]<br>可是什么也没变… 原因是换行符与空白合并了 white-space默认值是noraml，它在遇到换行，空白和tab时都会合并，只有文字有超出才会转行，具体情况看这里。<br>这时候需要换行符起作用就要将white-space设置为pre</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">span::after&#123;</span><br><span class="line">    content: &#39;\A&#39;;</span><br><span class="line">    white-space: pre;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>[图3]<br>换行成功，和预想差不多。是需要最后一个span换行而不是全换行。所以只是需要后面有b标签的span标签才换行。也可以理解为前面有span标签的b标签需要在元素前加换行。这里需要补一下元素选择器的知识。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">dd + dt::before &#123;</span><br><span class="line">	content: &quot;\A&quot;;</span><br><span class="line">	white-space: pre;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>[图4]<br>habit里有两项挨在一起了，也可以用以上的思路在一个span后面或这前面加空格或者逗号，注意选择条件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">span+span::before&#123;</span><br><span class="line">        content: &#39; &#39;;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<p>[图5]</p>
+<p>基本文字格式完成，下面来给它加一层渐变的背景，就能实现条纹设计<br>渐变的基本知识看这里。<br>padding设置内容周边留白部分。line-height给每行设置行高，方便设置一条渐变的size.<br>这里行高是20px，所以size的高度就是40，宽设成自动</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">div&#123;</span><br><span class="line">       padding: 5px;</span><br><span class="line">       line-height: 20px;</span><br><span class="line">       background-image: linear-gradient(red 50%,blue 0);</span><br><span class="line">       background-size: auto 40px;</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
+<p>[图6]</p>
+<p>但是有一丢丢没对齐，需要用bg-orgin来根据内容设置背景了。具体bg-orgin的用法看这里。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">background-origin: content-box;</span><br></pre></td></tr></table></figure>
+<p>[图7]</p>
+<p>大功告成</p>
+<p>OS:要补充的内容好多…</p>
 
       
     </div>
@@ -324,8 +343,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/youling1894.github.io/2019/12/26/s/" rel="next" title="s">
-                <i class="fa fa-chevron-left"></i> s
+              <a href="/youling1894.github.io/2020/02/10/pseudoElement/" rel="next" title="伪元素">
+                <i class="fa fa-chevron-left"></i> 伪元素
               </a>
             
           </div>
@@ -333,10 +352,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/youling1894.github.io/2020/02/10/pseudoElement/" rel="prev" title="伪元素">
-                伪元素 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -404,7 +419,7 @@
               
                 <a href="/youling1894.github.io/archives/%20%7C%7C%20archive">
               
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">3</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
