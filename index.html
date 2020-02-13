@@ -229,6 +229,143 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://youling1894.github.io/youling1894.github.io/youling1894.github.io/2020/02/13/loading/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Zhi Sheng Liu">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/youling1894.github.io/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Sisyphus">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/youling1894.github.io/2020/02/13/loading/" itemprop="url">loading动画</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-02-13T14:39:38+08:00">
+                2020-02-13
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>我记得原来项目隔壁组有个大哥问我loading的动画咋做，我直接让设计给他切个gif用了。这种行为不太好。但其实这个是可以用动画来实现的。<br>css动画怎样实现，看这里。<br>[图片1]</p>
+<p>大部分的loading图都是个转圈圈的图，所以有两种解决方法。第一个是用几张不同的图片拼接在一起，用动画模仿快速翻动，从而形成一个圈圈转圈圈的效果。第二个是让一张图本身自转。</p>
+<p>第一种方法需要将各种形态的图片都要展示出来，如图。一共是8张图拼在一起。<br>[图片2]</p>
+<p>先写一些基本样式，比如这部分的宽高，和设置背景图片来显示。<br>目前效果只显示第一张图<br>[图3]</p>
+<p>如果想让它显示第二张图，就需要调整bg-position-x 默认是0，把它设置成-100看看(因为是向左移动，想要向右移动就设置成正数)<br>[图4]</p>
+<p>由此可以得出调整bg-position-x的位置可以切换图片。<br>所以用动画改变position-x的值就可以实现效果了<br>代码如下</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"> div&#123;</span><br><span class="line">    width: 100px;</span><br><span class="line">    height: 100px;</span><br><span class="line">    background-image:url(&quot;.&#x2F;img&#x2F;loader.png&quot;);</span><br><span class="line">    animation: loading 1s ;</span><br><span class="line">&#125;</span><br><span class="line">@keyframes loading &#123;</span><br><span class="line">    100%&#123;</span><br><span class="line">        background-position-x: -800px;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>[gif图1]</p>
+<p>效果不太一样，和跑马灯似的。我们需要的是一顿一顿的效果。这里就需要调整timing-function(过渡效果曲线)。<br>使用steps(x) x是步数，这个函数可以根据设定的步数来把动画切成多少步，从而实现逐帧动画的效果。<br>具体有关steps看这里。<br>[step曲线图]</p>
+<p>因为是8张图，就需要把动画切成8块。在animation属性里设置steps(8);<br>[gif图2]</p>
+<p>再加上infinite使它循环播放<br>[gif图3]</p>
+<p>完整代码</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">div&#123;</span><br><span class="line">    width: 100px;</span><br><span class="line">    height: 100px;</span><br><span class="line">    background-image:url(&quot;.&#x2F;img&#x2F;loader.png&quot;);</span><br><span class="line">    animation: loading 1s steps(8) infinite;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br><span class="line">@keyframes loading &#123;</span><br><span class="line">    100%&#123;</span><br><span class="line">        background-position-x: -800px;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>第二种方法很简单，和第一种大同小异。都是逐帧动画。只不过这回不用移动position-x的值。而是使图片自传起来。这个有个好处是只需要一张图片即可，就不用麻烦UI来切那么多图了。<br>素材如图<br>[素材图]</p>
+<p>rotate设置成360deg，要记得换素材图片。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">100%&#123;</span><br><span class="line">    &#x2F;* background-position-x: -800px; *&#x2F;</span><br><span class="line">    transform: rotate(360deg);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>[gif图4]</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://youling1894.github.io/youling1894.github.io/youling1894.github.io/2020/02/11/zebraStyleInfo1/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -769,7 +906,7 @@
               
                 <a href="/youling1894.github.io/archives/%20%7C%7C%20archive">
               
-                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-count">5</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
