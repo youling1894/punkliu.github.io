@@ -86,10 +86,12 @@
 <meta property="og:site_name" content="Sisyphus">
 <meta property="og:description" content="在DOM树中创建了一些抽象元素,可以看做成不占DOM树位置的一种虚拟元素，可以有内容，可以修改样式。所以调试的时候也很麻烦。语法：selector::pseudo-element {  property: value;}伪元素必须紧跟在语句中的简单选择器&#x2F;基础选择器之后。用两个冒号 :: ::after&amp;::before aftter是在选择器里最后一个子元素 before是在选择器里第一">
 <meta property="og:locale" content="CN">
+<meta property="og:image" content="https://youling1894.github.io/youling1894.github.io/2020/02/10/pseudoElement/a.png">
 <meta property="article:published_time" content="2020-02-10T06:20:32.000Z">
-<meta property="article:modified_time" content="2020-02-10T07:20:01.386Z">
+<meta property="article:modified_time" content="2020-02-13T13:21:09.430Z">
 <meta property="article:author" content="Zhi Sheng Liu">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://youling1894.github.io/youling1894.github.io/2020/02/10/pseudoElement/a.png">
 
 
 
@@ -307,7 +309,7 @@
 <li>content里必须有内容，即使是’’。</li>
 </ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&lt;style&gt;</span><br><span class="line">    span::before&#123;</span><br><span class="line">        content: &quot;im before,&quot;;</span><br><span class="line">        color: cadetblue;</span><br><span class="line">    &#125;</span><br><span class="line">    span::after&#123;</span><br><span class="line">        content: &#39;im after.&#39;;</span><br><span class="line">        color: chocolate;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&lt;&#x2F;style&gt;</span><br><span class="line">&lt;span&gt;</span><br><span class="line">    我是选择器</span><br><span class="line">&lt;&#x2F;span&gt;</span><br></pre></td></tr></table></figure>
-<p>结果图片</p>
+<p><img src="a.png" alt=""></p>
 
       
     </div>
